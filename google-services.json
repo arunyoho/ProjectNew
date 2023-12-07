@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "578971010791",
+    "project_id": "teacheradmin30",
+    "storage_bucket": "teacheradmin30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578971010791:android:eb3f39dae5d302d36a4442",
+        "android_client_info": {
+          "package_name": "com.arunyoho30.Lms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxfboxLTbEltcjsSQl2DrugSq4UCUxguA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
