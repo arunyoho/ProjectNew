@@ -1,5 +1,8 @@
+
+// import from react
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+// import from react native
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');

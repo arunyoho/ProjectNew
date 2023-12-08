@@ -1,7 +1,8 @@
+//  import from React
+import React from 'react'
+// import from react native
+import { Text, View } from 'react-native'
 
-
-import React from 'react';
-import { View, Text, Button } from 'react-native';
 
 function DashBoardScreen({ navigation }) {
   return (
@@ -9,7 +10,6 @@ function DashBoardScreen({ navigation }) {
       <Text>Aviation Counseling App</Text>
       <Button
         title="Go to Counseling"
-       
       />
     </View>
   );

@@ -1,21 +1,17 @@
-// App.js
-
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import Navigation from './Src/Navigation';
-import { StateContextProvider } from './Src/Context';
-
+// import from react
+import { React, useEffect } from "react";
+// import from react navigation
+import { NavigationContainer } from "@react-navigation/native";
+// import from context
+import { StateContextProvider } from "./Src/Context";
+// import from navigation
+import Navigation from "./Src/Navigation";
+// import from react native
 import { Alert } from "react-native";
-
+// import from firebase
 import messaging from "@react-native-firebase/messaging";
-import { useEffect } from "react";
-
-
-
-
 
 function App() {
-
   const requestUserPermission = async () => {
     const authStatus = await messaging().requestPermission();
     const enabled =
@@ -78,12 +74,11 @@ function App() {
     });
   }, []);
 
-
   return (
     <NavigationContainer>
       <StateContextProvider>
-       <Navigation/>
-       </StateContextProvider>
+        <Navigation />
+      </StateContextProvider>
     </NavigationContainer>
   );
 }

@@ -1,30 +1,54 @@
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import * as Animatable from 'react-native-animatable'
+//  import from react
+import React, { useEffect, useState } from "react";
 
-import Styles from '../Common/Style';
-import Colors from '../Constants/Colors';
-import MyHeader from '../Components/MyHeader'
+// import from react native
+import { StyleSheet, View } from "react-native";
+import * as Animatable from "react-native-animatable";
+
+//import from common
+import Styles from "../Common/Style";
+
+//import from components
+import MyHeader from "../Components/MyHeader";
+
+// import from Constants
+import Colors from "../Constants/Colors";
 
 export default function ColorScreen({ route, navigation }) {
   const viewRef = React.useRef(null);
   const [bgColor, setBgColor] = useState();
   useEffect(() => {
     switch (route.name) {
-      case 'Home': { setBgColor(Colors.primary); break; }
-      case 'Search': { setBgColor(Colors.green); break; }
-      case 'Add': { setBgColor(Colors.red); break; }
-      case 'Account': { setBgColor(Colors.purple); break; }
-      case 'Like': { setBgColor(Colors.yellow); break; }
-      default: setBgColor(Colors.white);
+      case "Home": {
+        setBgColor(Colors.primary);
+        break;
+      }
+      case "Search": {
+        setBgColor(Colors.green);
+        break;
+      }
+      case "Add": {
+        setBgColor(Colors.red);
+        break;
+      }
+      case "Account": {
+        setBgColor(Colors.purple);
+        break;
+      }
+      case "Like": {
+        setBgColor(Colors.yellow);
+        break;
+      }
+      default:
+        setBgColor(Colors.white);
     }
-  }, [])
+  }, []);
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      viewRef.current.animate({ 0: { opacity: 0.5, }, 1: { opacity: 1 } });
-    })
+    const unsubscribe = navigation.addListener("focus", () => {
+      viewRef.current.animate({ 0: { opacity: 0.5 }, 1: { opacity: 1 } });
+    });
     return () => unsubscribe;
-  }, [navigation])
+  }, [navigation]);
   return (
     <View style={Styles.container}>
       <MyHeader
@@ -32,16 +56,17 @@ export default function ColorScreen({ route, navigation }) {
         onPressMenu={() => navigation.goBack()}
         title={route.name}
         right="more-vertical"
-        onRightPress={() => console.log('right')}
+        onRightPress={() => console.log("right")}
       />
       <Animatable.View
         ref={viewRef}
-        easing={'ease-in-out'}
-        style={Styles.container}>
-        <View style={{backgroundColor: bgColor, flex: 1}} />
+        easing={"ease-in-out"}
+        style={Styles.container}
+      >
+        <View style={{ backgroundColor: bgColor, flex: 1 }} />
       </Animatable.View>
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

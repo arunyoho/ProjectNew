@@ -1,6 +1,6 @@
-import LoginScreen from "./LoginScreen";
 import ForgetPasswordScreen from "./ForgetPasswordScreen";
+import LoginScreen from "./LoginScreen";
 import OTPVerificationScreen from "./OTPVerificationScreen";
 import SetNewPasswordScreen from "./SetNewPasswordScreen";
 
-export { LoginScreen,ForgetPasswordScreen,OTPVerificationScreen,SetNewPasswordScreen}
+export { ForgetPasswordScreen, LoginScreen, OTPVerificationScreen, SetNewPasswordScreen };

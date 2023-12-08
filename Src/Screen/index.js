@@ -1,10 +1,16 @@
 import AccountScreen from "./AccountScreen";
 import AnswerPaperScreen from "./AnswerPaperScreen";
+import {
+  ForgetPasswordScreen,
+  LoginScreen,
+  OTPVerificationScreen,
+  SetNewPasswordScreen,
+} from "./AuthenticationScreen";
 import CalenderScreen from "./CalenderScreen";
 import CertificatesModelScreen from "./CertificatesModelScreen";
 import ClassDetailedScreen from "./ClassDetailedScreen";
-import ClassesScreen from "./ClassesScreen";
 import ClassHistoryScreen from "./ClassHistoryScreen";
+import ClassesScreen from "./ClassesScreen";
 import CommunityProfileScreen from "./CommunityProfileScreen";
 import CommunityScreen from "./CommunityScreen";
 import CompletedClassScreen from "./CompletedClassScreen";
@@ -34,12 +40,6 @@ import TermsAndConditionScreen from "./TermsAndConditionScreen";
 import TicketsScreen from "./TicketsScreen";
 import UpcomingClassScreen from "./UpcomingClassScreen";
 import UpcomingExamScreen from "./UpcomingExamScreen";
-import {
-  LoginScreen,
-  ForgetPasswordScreen,
-  OTPVerificationScreen,
-  SetNewPasswordScreen,
-} from "./AuthenticationScreen";
 
 export {
   AccountScreen,
@@ -47,14 +47,14 @@ export {
   CalenderScreen,
   CertificatesModelScreen,
   ClassDetailedScreen,
-  ClassesScreen,
   ClassHistoryScreen,
+  ClassesScreen,
   CommunityProfileScreen,
   CommunityScreen,
-  CompletedClassScreen,
-  CompletedExamScreen,
   CommunityScreen,
   CompletedClassScreen,
+  CompletedClassScreen,
+  CompletedExamScreen,
   CompletedExamScreen,
   CompletedTicketsScreen,
   DashBoardScreen,
@@ -64,25 +64,25 @@ export {
   ExamDetailedScreen,
   ExamHistoryScreen,
   ExamsScreen,
+  ForgetPasswordScreen,
   HelpCenterScreen,
   HelpDetailsScreen,
   IdCardModelScreen,
   LibraryDetailedScreen,
   LibraryScreen,
   LoadingScreen,
+  LoginScreen,
   NotificationScreen,
+  OTPVerificationScreen,
   PaymentDetailedScreen,
   PaymentsScreen,
   PendingTicketsScreen,
   PrivacyPolicyScreen,
   ResultDetailedScreen,
   ResultScreen,
+  SetNewPasswordScreen,
   TermsAndConditionScreen,
   TicketsScreen,
   UpcomingClassScreen,
   UpcomingExamScreen,
-  LoginScreen,
-  OTPVerificationScreen,
-  SetNewPasswordScreen,
-  ForgetPasswordScreen,
 };

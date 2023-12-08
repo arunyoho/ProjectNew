@@ -1,20 +1,27 @@
-import React from "react";
+// import from react navigation
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+//import from react
+import React from "react";
 // import BottomTabs from "../Screens/BottomTabs";
 
-import DashBoardScreen from "../Screen/DashBoardScreen";
+// import from screen
 import AccountScreen from "../Screen/AccountScreen";
 import AnswerPaperScreen from "../Screen/AnswerPaperScreen";
+import ForgetPasswordScreen from "../Screen/AuthenticationScreen/ForgetPasswordScreen";
+import LoginScreen from "../Screen/AuthenticationScreen/LoginScreen";
+import OTPVerificationScreen from "../Screen/AuthenticationScreen/OTPVerificationScreen";
+import SetNewPasswordScreen from "../Screen/AuthenticationScreen/SetNewPasswordScreen";
 import CalenderScreen from "../Screen/CalenderScreen";
 import CertificatesModelScreen from "../Screen/CertificatesModelScreen";
 import ClassDetailedScreen from "../Screen/ClassDetailedScreen";
-import ClassesScreen from "../Screen/ClassesScreen";
 import ClassHistoryScreen from "../Screen/ClassHistoryScreen";
+import ClassesScreen from "../Screen/ClassesScreen";
 import CommunityProfileScreen from "../Screen/CommunityProfileScreen";
 import CommunityScreen from "../Screen/CommunityScreen";
 import CompletedClassScreen from "../Screen/CompletedClassScreen";
 import CompletedExamScreen from "../Screen/CompletedExamScreen";
 import CompletedTicketsScreen from "../Screen/CompletedTicketsScreen";
+import DashBoardScreen from "../Screen/DashBoardScreen";
 import EditProfileScreen from "../Screen/EditProfileScreen";
 import EvenDetailedScreen from "../Screen/EventDetailedScreen";
 import EventsScreen from "../Screen/EventsScreen";
@@ -37,10 +44,6 @@ import TermsAndConditionScreen from "../Screen/TermsAndConditionScreen";
 import TicketsScreen from "../Screen/TicketsScreen";
 import UpcomingClassScreen from "../Screen/UpcomingClassScreen";
 import UpcomingExamScreen from "../Screen/UpcomingExamScreen";
-import LoginScreen  from "../Screen/AuthenticationScreen/LoginScreen";
-import ForgetPasswordScreen from "../Screen/AuthenticationScreen/ForgetPasswordScreen";
-import OTPVerificationScreen from "../Screen/AuthenticationScreen/OTPVerificationScreen";
-import SetNewPasswordScreen from "../Screen/AuthenticationScreen/SetNewPasswordScreen";
 
 const Navigation = () => {
   const Stack = createNativeStackNavigator();
@@ -147,18 +150,27 @@ const Navigation = () => {
 
       <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />
 
-      <Stack.Screen name="CertificatesModelScreen" component={CertificatesModelScreen} />
-  
-  
+      <Stack.Screen
+        name="CertificatesModelScreen"
+        component={CertificatesModelScreen}
+      />
+
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
 
-<Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
-<Stack.Screen name="OTPVerificationScreen" component={OTPVerificationScreen} />
+      <Stack.Screen
+        name="ForgetPasswordScreen"
+        component={ForgetPasswordScreen}
+      />
+      <Stack.Screen
+        name="OTPVerificationScreen"
+        component={OTPVerificationScreen}
+      />
 
-<Stack.Screen name="SetNewPasswordScreen" component={SetNewPasswordScreen} />
-  
-  
-   </Stack.Navigator>
+      <Stack.Screen
+        name="SetNewPasswordScreen"
+        component={SetNewPasswordScreen}
+      />
+    </Stack.Navigator>
   );
 };
 

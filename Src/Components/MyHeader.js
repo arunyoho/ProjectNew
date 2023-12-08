@@ -1,8 +1,16 @@
+// import from react
 import React from 'react'
+
+// import from react native
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
+
+// import from react native paper
 import { Badge, Surface, Text, Title } from 'react-native-paper'
+
+// import from react native icons
 import Feather from 'react-native-vector-icons/Feather'
 
+// import from constants
 import Colors from '../Constants/Colors'
 
 const IconSize = 24;

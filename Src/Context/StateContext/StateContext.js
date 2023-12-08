@@ -1,3 +1,4 @@
+// import from react
 import { createContext, useEffect, useState, useContext } from "react";
 
 const StateContext = createContext({});
@@ -23,11 +24,10 @@ const StateContextProvider = ({ children }) => {
           searchInput: isDarkMode ? "#F2F2F2" : "#141414",
           primary: "#304ffe",
           textColor: isDarkMode ? "#000000" : "#FFFFFF",
-          Color:isDarkMode ? "#FFFFFF" : "#000000"
+          Color: isDarkMode ? "#FFFFFF" : "#000000",
         },
-      }}          
+      }}
     >
-
       {children}
     </StateContext.Provider>
   );
