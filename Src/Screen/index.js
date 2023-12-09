@@ -40,7 +40,7 @@ import TermsAndConditionScreen from "./TermsAndConditionScreen";
 import TicketsScreen from "./TicketsScreen";
 import UpcomingClassScreen from "./UpcomingClassScreen";
 import UpcomingExamScreen from "./UpcomingExamScreen";
-
+import BottomTabs from "./BottomTabs";
 export {
   AccountScreen,
   AnswerPaperScreen,
@@ -51,10 +51,7 @@ export {
   ClassesScreen,
   CommunityProfileScreen,
   CommunityScreen,
-  CommunityScreen,
   CompletedClassScreen,
-  CompletedClassScreen,
-  CompletedExamScreen,
   CompletedExamScreen,
   CompletedTicketsScreen,
   DashBoardScreen,
@@ -85,4 +82,5 @@ export {
   TicketsScreen,
   UpcomingClassScreen,
   UpcomingExamScreen,
+  BottomTabs
 };

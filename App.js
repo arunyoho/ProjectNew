@@ -5,11 +5,12 @@ import { NavigationContainer } from "@react-navigation/native";
 // import from context
 import { StateContextProvider } from "./Src/Context";
 // import from navigation
-import Navigation from "./Src/Navigation";
+import Navigation from "./Src/navigation";
 // import from react native
 import { Alert } from "react-native";
 // import from firebase
 import messaging from "@react-native-firebase/messaging";
+
 
 function App() {
   const requestUserPermission = async () => {
@@ -78,6 +79,7 @@ function App() {
     <NavigationContainer>
       <StateContextProvider>
         <Navigation />
+      
       </StateContextProvider>
     </NavigationContainer>
   );

@@ -3,7 +3,7 @@ import React from "react";
 // import from react native
 import { StyleSheet } from "react-native";
 // import from constants
-import Colors from "../Constants/Colors";
+import Colors from "../constants/Colors";
 const Styles = StyleSheet.create({
   container: {
     flex: 1,

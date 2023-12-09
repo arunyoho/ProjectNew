@@ -2,7 +2,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import from react
 import React from "react";
-// import BottomTabs from "../Screens/BottomTabs";
+import BottomTabs from "../Screen/BottomTabs";
 
 // import from screen
 import AccountScreen from "../Screen/AccountScreen";
@@ -54,7 +54,23 @@ const Navigation = () => {
         headerShown: false,
       }}
     >
-      {/* <Stack.Screen name="BottomTabs"  component={BottomTabs} /> */}
+      <Stack.Screen name="BottomTabs"  component={BottomTabs} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen
+        name="ForgetPasswordScreen"
+        component={ForgetPasswordScreen}
+      />
+      <Stack.Screen
+        name="OTPVerificationScreen"
+        component={OTPVerificationScreen}
+      />
+
+
+      <Stack.Screen
+        name="SetNewPasswordScreen"
+        component={SetNewPasswordScreen}
+      />
+
       <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
 
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
@@ -153,22 +169,6 @@ const Navigation = () => {
       <Stack.Screen
         name="CertificatesModelScreen"
         component={CertificatesModelScreen}
-      />
-
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-
-      <Stack.Screen
-        name="ForgetPasswordScreen"
-        component={ForgetPasswordScreen}
-      />
-      <Stack.Screen
-        name="OTPVerificationScreen"
-        component={OTPVerificationScreen}
-      />
-
-      <Stack.Screen
-        name="SetNewPasswordScreen"
-        component={SetNewPasswordScreen}
       />
     </Stack.Navigator>
   );

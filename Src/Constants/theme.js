@@ -21,6 +21,9 @@ export const COLORS = {
   lightGray1: "#DDDDDD",
   lightGray2: "#F5F5F8",
   white2: "#FBFBFB",
+  violet:"#092C4C",
+  primary:"#FA634D",
+  secondary:"#F1F6FB"
 };
 export const SIZES = {
   // global sizes
