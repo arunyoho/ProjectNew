@@ -3,9 +3,9 @@ import { React, useEffect } from "react";
 // import from react navigation
 import { NavigationContainer } from "@react-navigation/native";
 // import from context
-import { StateContextProvider } from "./Src/Context";
+import { StateContextProvider } from "./src/context";
 // import from navigation
-import Navigation from "./Src/navigation";
+import Navigation from "./src/navigation";
 // import from react native
 import { Alert } from "react-native";
 // import from firebase

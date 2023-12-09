@@ -15,7 +15,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 // imports from constants
 import { COLORS, FONTS, SIZES, icons, images } from "../../../constants/Index";
 // imports from context
-import { useStateContext } from "../../../Context/StateContext/StateContext";
+import { useStateContext } from "../../../context/StateContext/StateContext";
 // import from expo vector icons
 import {
   MaterialIcons,

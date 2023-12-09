@@ -3,6 +3,7 @@ import React from 'react'
 // import from react native
 import { Text, View } from 'react-native'
 
+
 const AccountScreen = () => {
   return (
     <View>

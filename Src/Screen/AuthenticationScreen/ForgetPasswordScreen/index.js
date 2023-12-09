@@ -14,7 +14,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 //import from constants
 import { COLORS, SIZES } from "../../../constants/Index";
 //import from context
-import { useStateContext } from "../../../Context/StateContext/StateContext";
+import { useStateContext } from "../../../context/StateContext/StateContext";
 
 import OTPVerificationScreen from "../OTPVerificationScreen";
 

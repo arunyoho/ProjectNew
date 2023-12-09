@@ -12,7 +12,7 @@ import {
 // import from expo vector
 import { Ionicons, Feather } from "@expo/vector-icons";
 // import from context
-import { useStateContext } from "../../../Context/StateContext/StateContext";
+import { useStateContext } from "../../../context/StateContext/StateContext";
 //import from constants
 import { COLORS, SIZES } from "../../../constants/Index";
 //import from screen
