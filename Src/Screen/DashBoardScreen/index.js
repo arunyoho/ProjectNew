@@ -11,12 +11,12 @@ import {
   TouchableOpacity,
   Alert
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 // imports from constants
 import { COLORS, FONTS, SIZES, icons, images } from "../../constants/Index";
 // imports from context
-import useStateContext from "../../context/StateContext/StateContext"
+import {useStateContext} from "../../context/StateContext/StateContext"
 // import from expo vector icons
 import {
   MaterialIcons,
@@ -36,10 +36,10 @@ import MyCalendar from "../../components/Calender";
 
   const DashBoardScreen = ({navigation}) => {
   
-   
+   const {top} = useSafeAreaInsets();
 
 // for colors
-const { colors, isDarkMode } = useStateContext();
+const { colors } = useStateContext();
 
 // styles
 
@@ -174,7 +174,7 @@ eventsHeader: {
       
       <View  style={styles.name}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.openDrawer()}>
           <Entypo name="menu" size={24} color="black" />
         </TouchableOpacity>
 
@@ -209,7 +209,7 @@ eventsHeader: {
        </TouchableOpacity>
        </View>
 
-
+     
 <View style={{flexDirection:"row"}}>
        <TouchableOpacity style={styles.videos}>
         <Text style={styles.coursenumber}>

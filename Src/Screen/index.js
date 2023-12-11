@@ -40,6 +40,7 @@ import TermsAndConditionScreen from "./TermsAndConditionScreen";
 import TicketsScreen from "./TicketsScreen";
 import UpcomingClassScreen from "./UpcomingClassScreen";
 import UpcomingExamScreen from "./UpcomingExamScreen";
+import ProfileScreen from "./ProfileScreen";
 import BottomTabs from "./BottomTabs";
 export {
   AccountScreen,
@@ -82,5 +83,6 @@ export {
   TicketsScreen,
   UpcomingClassScreen,
   UpcomingExamScreen,
-  BottomTabs
+  ProfileScreen,
+  BottomTabs,
 };

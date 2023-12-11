@@ -129,7 +129,8 @@ const styles = StyleSheet.create({
 });
 
 const BottomTabs = ({ navigation }) => {
-  const { colors, toggleDarkMode } = useStateContext();
+    // use for colors
+    const { colors } = useStateContext();
 
   const screenOptions1 = {
     tabBarStyle: {

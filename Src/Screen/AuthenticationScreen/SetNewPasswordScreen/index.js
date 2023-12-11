@@ -2,28 +2,21 @@
 import React, { useState } from "react";
 // import from react native
 import {
-  View,
-  Text,
-  Image,
-  TextInput,
   StyleSheet,
-  ScrollView,
+  Text,
+  TextInput,
   TouchableOpacity,
+  View
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { SafeAreaView } from "react-native-safe-area-context";
 // imports from constants
-import { COLORS, FONTS, SIZES, icons, images } from "../../../constants/Index";
+import { COLORS, SIZES } from "../../../constants/Index";
 // imports from context
 import { useStateContext } from "../../../context/StateContext/StateContext";
 // import from expo vector icons
 import {
-  MaterialIcons,
-  Ionicons,
-  Entypo,
-  Feather,
-  FontAwesome,
-  FontAwesome5,
+  Ionicons
 } from "@expo/vector-icons";
 
 const SetNewPasswordScreen = ({ navigation }) => {
