@@ -18,6 +18,7 @@ const CompletedExamScreen = ({ navigation }) => {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
+      color: colors.textColor,
     },
     card: {
       width: '95%',
@@ -30,6 +31,7 @@ const CompletedExamScreen = ({ navigation }) => {
     cardText: {
       fontSize: 18,
       marginBottom: 10,
+      color: colors.textColor,
     },
   });
   return (

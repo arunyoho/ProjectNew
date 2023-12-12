@@ -11,7 +11,8 @@ import { useStateContext } from "../../context/StateContext/StateContext";
 import Colors from "../../constants/Colors";
 
 const ExamsScreen = ({ navigation }) => {
-  const { colors } = useStateContext();
+   // use for colors
+   const { colors,isDarkMode } = useStateContext();
   const [activeTab, setActiveTab] = useState("Upcoming Exam");
 
   const renderScreen = () => {
@@ -30,7 +31,7 @@ const ExamsScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor:Colors.greenAlpha,
+      backgroundColor:isDarkMode ? Colors.greenAlpha : colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius * 2,
     },

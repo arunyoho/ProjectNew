@@ -5,7 +5,7 @@ const StateContext = createContext({});
 
 const StateContextProvider = ({ children }) => {
   const [dbUser, setDbUser] = useState();
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState();
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };

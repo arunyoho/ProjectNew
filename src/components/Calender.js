@@ -5,7 +5,19 @@ import { View, StyleSheet, Text, TouchableOpacity, Alert, Modal, TextInput, Butt
 // import from react native calender
 import CalendarPicker from 'react-native-calendar-picker';
 
+// import from statecontext
+import { useStateContext } from '../context/StateContext/StateContext';
+
+// import from constants
+import Colors from "../constants/Colors";
+
 const MyCalendar = () => {
+
+// for colors
+const { colors,isDarkMode} = useStateContext();
+
+
+
   // state for selectdate
   const [selectedDate, setSelectedDate] = useState(null);
   // state for events
@@ -68,6 +80,7 @@ const MyCalendar = () => {
       flex: 1,
       // marginTop: 50,
       padding: 16,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.cardBackground,
     },
     addButton: {
       marginTop: 16,
@@ -99,6 +112,7 @@ const MyCalendar = () => {
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: 10,
+      color:colors.textColor
     },
   });
 
@@ -110,6 +124,7 @@ const MyCalendar = () => {
         selectedStartDate={selectedDate}
         onDateChange={onDateChange}
       />
+
 
       <TouchableOpacity onPress={addEvent}>
         <View style={styles.addButton}>

@@ -47,7 +47,7 @@ const UpcomingExamScreen = ({ navigation }) => {
           style={styles.card}
           key={index}
           onPress={() =>
-            navigation.navigate(ExamDetailedScreen, { examDetails: item })
+            navigation.navigate(ExamDetailedScreen)
           }
         >
           <View style={{ flex: 1 }}>

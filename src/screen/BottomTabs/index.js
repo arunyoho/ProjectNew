@@ -1,16 +1,20 @@
+// import from react navigation
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Text, TouchableOpacity, View } from "react-native";
-
+// import from react native
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+// import from components
+import Icon, { Icons } from "../../components/Icons";
+// import from constants
+import Colors from "../../constants/Colors";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
+// import from screen
+import CommunityProfileScreen from "../CommunityProfileScreen";
 import DashBoardScreen from "../DashBoardScreen";
 import HelpCenterScreen from "../HelpCenterScreen";
-import CommunityProfileScreen from "../CommunityProfileScreen";
-import { StyleSheet } from "react-native";
-import Colors from "../../constants/Colors";
-import { useStateContext } from "../../context/StateContext/StateContext";
-import Icon, { Icons } from "../../components/Icons";
-
+// import from react native animate
 import * as Animatable from "react-native-animatable";
-
+// import from react
 import React, { useEffect, useRef } from "react";
 
 const TabArr = [
@@ -23,43 +27,37 @@ const TabArr = [
     color: Colors.darkOverlayColor,
     alphaClr: Colors.primaryAlpha,
   },
-    // {
-    //   route: "Search",
-    //   label: "Search",
-    //   type: Icons.Feather,
-    //   icon: "search",
-    //   component: SearchScreen,
-    //   color: Colors.darkOverlayColor,
-    //   alphaClr: Colors.primaryAlpha,
-    // },
-    {
-      route: "HelpCenter",
-      label: "Help",
-      type: Icons.Feather,
-      icon: "help-circle",
-      component: HelpCenterScreen,
-      color: Colors.darkOverlayColor,
-      alphaClr: Colors.primaryAlpha,
-    },
-    {
-      route: "CommunityProfileScreen",
-      label: "Profile",
-      type: Icons.FontAwesome5,
-      icon: "user-graduate",
-      component: CommunityProfileScreen,
-      color: Colors.darkOverlayColor,
-      alphaClr: Colors.primaryAlpha,
-    },
-//   { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: AccountScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },
+
+  {
+    route: "HelpCenter",
+    label: "Help",
+    type: Icons.Feather,
+    icon: "help-circle",
+    component: HelpCenterScreen,
+    color: Colors.darkOverlayColor,
+    alphaClr: Colors.primaryAlpha,
+  },
+  {
+    route: "CommunityProfileScreen",
+    label: "Profile",
+    type: Icons.FontAwesome5,
+    icon: "user-graduate",
+    component: CommunityProfileScreen,
+    color: Colors.darkOverlayColor,
+    alphaClr: Colors.primaryAlpha,
+  },
+  //   { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: AccountScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },
 ];
 
 const Tab = createBottomTabNavigator();
 
 const TabButton = (props) => {
+  
   const { item, onPress, accessibilityState } = props;
   const focused = accessibilityState.selected;
   const viewRef = useRef(null);
   const textViewRef = useRef(null);
+
 
   useEffect(() => {
     if (focused) {
@@ -115,6 +113,7 @@ const TabButton = (props) => {
   );
 };
 
+// for styles
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
@@ -129,8 +128,8 @@ const styles = StyleSheet.create({
 });
 
 const BottomTabs = ({ navigation }) => {
-    // use for colors
-    const { colors } = useStateContext();
+  // use for colors
+  const { colors } = useStateContext();
 
   const screenOptions1 = {
     tabBarStyle: {

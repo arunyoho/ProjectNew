@@ -13,6 +13,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image, StyleSheet, Text, View } from "react-native";
 // import from screens
 import BottomTabs from "../screen/BottomTabs";
+// import from context
+import { useStateContext } from "../context/StateContext/StateContext";
+// import from constants
+import Colors  from "../constants/Colors";
+
 
 // import from screen
 import { LoadingScreen } from "../screen";
@@ -54,27 +59,38 @@ import TermsAndConditionScreen from "../screen/TermsAndConditionScreen";
 import TicketsScreen from "../screen/TicketsScreen";
 import UpcomingClassScreen from "../screen/UpcomingClassScreen";
 import UpcomingExamScreen from "../screen/UpcomingExamScreen";
+import SplashScreen from "../screen/SplashScreen";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
+
 const StackNavigator = () => {
+  
+ 
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
-    >
+      >
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen name="ExamDetailedScreen" component={ExamDetailedScreen} />
       <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
-      <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
-      <Stack.Screen
+        <Stack.Screen
         name="CommunityProfileScreen"
         component={CommunityProfileScreen}
       />
+      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+     
+      
+      <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
+      <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
+     
       <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />
-      <Stack.Screen name="BottomTabs" component={BottomTabs} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      
 
       <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
       <Stack.Screen
@@ -89,7 +105,7 @@ const StackNavigator = () => {
         name="OTPVerificationScreen"
         component={OTPVerificationScreen}
       />
-      <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
+      
 
       <Stack.Screen
         name="CompletedExamScreen"
@@ -97,7 +113,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen name="ExamHistoryScreen" component={ExamHistoryScreen} />
 
-      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+      
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
       <Stack.Screen name="ClassesScreen" component={ClassesScreen} />
       <Stack.Screen
@@ -163,6 +179,9 @@ const StackNavigator = () => {
 };
 
 const CustomDrawerContent = (props) => {
+
+   // use for colors
+ const { colors,isDarkMode } = useStateContext();
   const user = {
     name: "Arun",
     email: "Arun@example.com",
@@ -175,6 +194,7 @@ const CustomDrawerContent = (props) => {
       flexDirection: "row",
       alignItems: "center",
       padding: 16,
+      backgroundColor:isDarkMode ? Colors.greenAlpha : colors.background,
     },
     userImage: {
       width: 50,
@@ -185,10 +205,11 @@ const CustomDrawerContent = (props) => {
     userName: {
       fontSize: 16,
       fontWeight: "bold",
+      color:colors.textColor
     },
     userEmail: {
       fontSize: 14,
-      color: "gray",
+      color:colors.textColor
     },
   });
   return (

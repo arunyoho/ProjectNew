@@ -1,7 +1,7 @@
 // imports from react
 import React, { useEffect, useRef, useState } from "react";
 // imports from react native
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View,Button } from "react-native";
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View,Button,ScrollView } from "react-native";
 import OTPTextInput from "react-native-otp-textinput";
 import { SafeAreaView } from "react-native-safe-area-context";
 // imports from constants
@@ -18,6 +18,9 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 import SetNewPasswordScreen from "../SetNewPasswordScreen";
+
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import Colors from "../../../constants/Colors";
 
 const OTPVerificationScreen = ({ navigation }) => {
 
@@ -136,12 +139,19 @@ const OTPVerificationScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.grandParent}>
+        
+    <KeyboardAwareScrollView 
+       keyboardDismissMode="on-drag"
+       contentContainerStyle={{
+        flex:1,
+       }}
+    >
       <View style={styles.header}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles.back}
         >
-         <Ionicons name="ios-arrow-back" size={24} color="black" />
+         <Ionicons name="ios-arrow-back" size={24} color={Colors.primary} />
         </TouchableOpacity>
 
         <View>
@@ -149,7 +159,7 @@ const OTPVerificationScreen = ({ navigation }) => {
         </View>
       </View>
 
-         <View style={{flex:1,justifyContent:"center",}}>
+         <View style={{flex:1,marginVertical:SIZES.padding*4}}>
 
         <View style={styles.OTPTextContainer}>
           <Text style={styles.OTPText}>Code has sent sent to</Text>
@@ -224,6 +234,8 @@ const OTPVerificationScreen = ({ navigation }) => {
         </TouchableOpacity>
       )}
       </View>
+      </KeyboardAwareScrollView>
+      
     </SafeAreaView>
   );
 };

@@ -18,6 +18,7 @@ const ExamHistoryScreen = () => {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
+      color: colors.textColor,
     },
     card: {
       width: '100%',
@@ -31,6 +32,7 @@ const ExamHistoryScreen = () => {
     cardText: {
       fontSize: 18,
       marginBottom: 10,
+      color: colors.textColor,
     },
   });
   return (

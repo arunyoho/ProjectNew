@@ -1,5 +1,9 @@
 // import from expo-vector-icons
-import { FontAwesome, MaterialCommunityIcons, Ionicons, } from "@expo/vector-icons";
+import {
+  FontAwesome,
+  MaterialCommunityIcons,
+  Ionicons,
+} from "@expo/vector-icons";
 // import from react
 import React, { useState } from "react";
 // import from react native
@@ -20,7 +24,6 @@ import { useStateContext } from "../../../context/StateContext/StateContext";
 import OTPVerificationScreen from "../OTPVerificationScreen";
 
 const ForgetPasswordScreen = ({ navigation }) => {
- 
   // dummydata for email
   const data = [
     {
@@ -28,7 +31,6 @@ const ForgetPasswordScreen = ({ navigation }) => {
       text: "via Email",
       mail: "aru******@gmail.com",
     },
-    
   ];
 
   // usestate for hover
@@ -81,7 +83,7 @@ const ForgetPasswordScreen = ({ navigation }) => {
       fontSize: SIZES.h2,
       fontWeight: "bold",
       marginLeft: SIZES.radius,
-      color:colors.textColor
+      color: colors.textColor,
     },
     back: {
       marginRight: SIZES.radius,
@@ -172,9 +174,9 @@ const ForgetPasswordScreen = ({ navigation }) => {
       fontSize: 16,
       fontWeight: "bold",
     },
-    text:{
+    text: {
       color: colors.textColor,
-    }
+    },
   });
 
   // navigate to next page
@@ -185,18 +187,18 @@ const ForgetPasswordScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.grandParent}>
       <View>
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.back}
-        >
-         <Ionicons name="ios-arrow-back" size={24} color={COLORS.blue} />
-        </TouchableOpacity>
+        <View style={styles.header}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={styles.back}
+          >
+            <Ionicons name="ios-arrow-back" size={24} color={COLORS.blue} />
+          </TouchableOpacity>
 
-        <View>
-          <Text style={styles.heading}>Forget Password</Text>
+          <View>
+            <Text style={styles.heading}>Forget Password</Text>
+          </View>
         </View>
-      </View>
 
         <View style={styles.fonttext}>
           <Text style={styles.text}>
@@ -230,7 +232,7 @@ const ForgetPasswordScreen = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={()=>navigation.navigate(OTPVerificationScreen)}
+        onPress={() => navigation.navigate(OTPVerificationScreen)}
         disabled={isEnableForget() ? false : true}
       >
         <Text style={styles.btntext}>Next</Text>

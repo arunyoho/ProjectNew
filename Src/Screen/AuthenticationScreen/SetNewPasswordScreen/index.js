@@ -18,6 +18,7 @@ import { useStateContext } from "../../../context/StateContext/StateContext";
 import {
   Ionicons
 } from "@expo/vector-icons";
+import Colors from "../../../constants/Colors";
 
 const SetNewPasswordScreen = ({ navigation }) => {
   // for colors
@@ -143,16 +144,19 @@ const SetNewPasswordScreen = ({ navigation }) => {
   });
   return (
     <SafeAreaView style={styles.grandParent}>
-      <KeyboardAwareScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        keyboardShouldPersistTaps="handled"
-      >
+      
+       <KeyboardAwareScrollView 
+       keyboardDismissMode="on-drag"
+       contentContainerStyle={{
+        flex:1,
+       }}
+    >
         <View style={styles.header}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.back}
           >
-            <Ionicons name="ios-arrow-back" size={24} color="black" />
+            <Ionicons name="ios-arrow-back" size={24} color={Colors.primary} />
           </TouchableOpacity>
 
           <View>
@@ -160,7 +164,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={{ flex: 1, justifyContent: "center" }}>
+        <View style={{ flex: 1,marginVertical:SIZES.padding*4}}>
           <View>
             <Text style={styles.title}>Create Your New Password</Text>
           </View>

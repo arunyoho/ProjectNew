@@ -20,6 +20,7 @@ import {
   FontAwesome,
   Ionicons
 } from "@expo/vector-icons";
+// import from constants
 import Colors from "../../constants/Colors";
 
 // import from components
@@ -33,13 +34,13 @@ import MyCalendar from "../../components/Calender";
    const {top} = useSafeAreaInsets();
 
 // for colors
-const { colors } = useStateContext();
+const { colors,isDarkMode} = useStateContext();
 
 // styles
 const styles = StyleSheet.create({
   grandParent: {
     flex: 1,
-    backgroundColor:Colors.greenAlpha,
+    backgroundColor:isDarkMode ? Colors.greenAlpha : colors.background,
     paddingHorizontal: SIZES.radius,
     paddingVertical: SIZES.radius,
   },
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 courses:{
-  backgroundColor:Colors.greenAlpha,
+  backgroundColor: isDarkMode ? Colors.greenAlpha : colors.cardBackground,
   borderRadius:10,
   padding:SIZES.padding,
   marginTop:SIZES.padding,
@@ -85,7 +86,7 @@ courses:{
 
 },
 Exams:{
-  backgroundColor:Colors.purpleAlpha,
+  backgroundColor: isDarkMode ? Colors.purpleAlpha : colors.cardBackground,
   borderRadius:10,
   padding:SIZES.padding,
   marginTop:SIZES.padding,
@@ -96,16 +97,19 @@ Exams:{
   margin:SIZES.base,
 },
 coursenumber:{
-  fontSize:SIZES.h2
+  fontSize:SIZES.h2,
+  color:colors.textColor
 },
 coursetext:{
-  fontSize:SIZES.h3
+  fontSize:SIZES.h3,
+  color:colors.textColor
 },
 examtext:{
   fontSize:SIZES.h3,
+  color:colors.textColor
 },
 videos:{
-  backgroundColor:Colors.primaryAlpha,
+  backgroundColor: isDarkMode ? Colors.primaryAlpha : colors.cardBackground,
   borderRadius:10,
   padding:SIZES.padding,
   marginTop:SIZES.radius,
@@ -116,7 +120,7 @@ videos:{
   margin:SIZES.base,
 },
 class:{
-  backgroundColor:Colors.redAlpha,
+  backgroundColor: isDarkMode ? Colors.redAlpha : colors.cardBackground,
   borderRadius:10,
   padding:SIZES.padding,
   marginTop:SIZES.radius,
@@ -127,7 +131,7 @@ class:{
   margin:SIZES.base,
 },
 lesson:{
-  backgroundColor:"red",
+  backgroundColor: isDarkMode ? Colors.redAlpha : colors.cardBackground,
   padding:30,
   margin:SIZES.base,
   borderRadius:10
@@ -168,7 +172,7 @@ eventsHeader: {
       <View  style={styles.name}>
       <View style={styles.header}>
         <TouchableOpacity onPress={()=>navigation.openDrawer()}>
-          <Entypo name="menu" size={24} color="black" />
+          <Entypo name="menu" size={24} color={Colors.primary} />
         </TouchableOpacity>
 
         <View>
@@ -178,7 +182,7 @@ eventsHeader: {
        
       </View>
       <TouchableOpacity>
-        <Ionicons name="notifications" size={24} color="black" />
+        <Ionicons name="notifications" size={24} color={Colors.primary} />
         </TouchableOpacity>
         </View>
 
@@ -224,19 +228,19 @@ eventsHeader: {
        </View>
 
 <TouchableOpacity style={styles.lesson}>
-  <Text style={{fontSize:SIZES.h3}}>
+  <Text style={{fontSize:SIZES.h3,color:colors.textColor}}>
     App Development
   </Text>
   <View style={{flexDirection:"row",alignItems:"center",marginTop:SIZES.base}} >
-  <FontAwesome name="play-circle-o" size={24} color="black" />
-  <Text style={{marginLeft:5}}>
+  <FontAwesome name="play-circle-o" size={24} color={colors.primary} />
+  <Text style={{marginLeft:5,color:colors.textColor}}>
  24 Lessons
   </Text>
   </View>
 
   <View style={{flexDirection:"row",alignItems:"center",marginTop:SIZES.base}} >
-  <Ionicons name="time" size={24} color="black" />
-  <Text>
+  <Ionicons name="time" size={24} color={colors.primary} />
+  <Text style={{marginLeft:5,color:colors.textColor}}>
    15 hrs
   </Text>
   </View>
@@ -244,7 +248,7 @@ eventsHeader: {
 
 </TouchableOpacity>
     <View>
-      <Text style={{fontSize:SIZES.h2,fontWeight: 'bold',margin:SIZES.base,}}>
+      <Text style={{fontSize:SIZES.h2,fontWeight: 'bold',margin:SIZES.base, color:colors.textColor}}>
         Events
       </Text>
     </View>
