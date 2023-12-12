@@ -22,10 +22,15 @@ const LogInScreen = ({ navigation }) => {
    // use for colors
    const { colors } = useStateContext();
 
+   // states for email
   const [email, setEmail] = useState('');
+  // states for password
   const [password, setPassword] = useState('');
+  // states for emailerror
   const [emailError, setEmailError] = useState('');
+  //states for passworderror
   const [passwordError, setPasswordError] = useState('');
+  //states for showpassword
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
@@ -54,6 +59,7 @@ const LogInScreen = ({ navigation }) => {
     console.log('Logging in with:', { email, password });
   };
 
+  // for styles
   const styles = StyleSheet.create({
     container: {
       flex: 1,

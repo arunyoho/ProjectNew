@@ -94,6 +94,7 @@ const OTPVerificationScreen = ({ navigation }) => {
   // state for inputs
   const [inputDisabled, setInputDisabled] = useState(false);
 
+  // for countdown
   useEffect(() => {
     const countdownInterval = setInterval(() => {
       if (countdown > 0) {
@@ -118,7 +119,7 @@ const OTPVerificationScreen = ({ navigation }) => {
       Alert.alert("OTP Resent!");
     }
   };
-
+     // for otpInput
   let otpInput = useRef(null);
 
   // function for clear the text

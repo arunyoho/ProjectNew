@@ -34,6 +34,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // function for show error
   const handleContinue = () => {
     // Validate new password
     if (!newPassword) {
@@ -67,8 +68,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
       setConfirmPasswordError("");
     }
 
-    // Continue logic (e.g., navigate to the next screen)
-    // ...
+   
   };
 
   // styles

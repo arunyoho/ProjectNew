@@ -16,9 +16,11 @@ import { COLORS, SIZES } from "../../../constants/Index";
 //import from context
 import { useStateContext } from "../../../context/StateContext/StateContext";
 
+// import from screen
 import OTPVerificationScreen from "../OTPVerificationScreen";
 
 const ForgetPasswordScreen = ({ navigation }) => {
+ 
   // dummydata for email
   const data = [
     {
