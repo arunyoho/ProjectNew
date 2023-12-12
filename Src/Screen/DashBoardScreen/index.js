@@ -1,34 +1,28 @@
 // import from react
-import React, { useState,useEffect } from "react";
+import React from "react";
 // import from react native
 import {
-  View,
-  Text,
-  Image,
-  TextInput,
-  StyleSheet,
   ScrollView,
+  StyleSheet,
+  Text,
   TouchableOpacity,
-  Alert
+  View
 } from "react-native";
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 // imports from constants
-import { COLORS, FONTS, SIZES, icons, images } from "../../constants/Index";
+import { SIZES } from "../../constants/Index";
 // imports from context
-import {useStateContext} from "../../context/StateContext/StateContext"
+import { useStateContext } from "../../context/StateContext/StateContext";
 // import from expo vector icons
 import {
-  MaterialIcons,
-  Ionicons,
   Entypo,
-  Feather,
   FontAwesome,
-  FontAwesome5,
+  Ionicons
 } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 
-import CalendarPicker from 'react-native-calendar-picker';
+// import from components
 import MyCalendar from "../../components/Calender";
 
 
@@ -42,7 +36,6 @@ import MyCalendar from "../../components/Calender";
 const { colors } = useStateContext();
 
 // styles
-
 const styles = StyleSheet.create({
   grandParent: {
     flex: 1,

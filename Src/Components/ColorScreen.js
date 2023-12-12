@@ -6,17 +6,19 @@ import { StyleSheet, View } from "react-native";
 import * as Animatable from "react-native-animatable";
 
 //import from common
-import Styles from "../Common/Style";
+import Styles from "../common/Style";
 
 //import from components
-import MyHeader from "../Components/MyHeader";
+import MyHeader from "../components/MyHeader";
 
 // import from Constants
-import Colors from "../Constants/Colors";
+import Colors from "../constants/Colors";
 
 export default function ColorScreen({ route, navigation }) {
   const viewRef = React.useRef(null);
+  // state for color
   const [bgColor, setBgColor] = useState();
+ 
   useEffect(() => {
     switch (route.name) {
       case "Home": {
@@ -43,12 +45,14 @@ export default function ColorScreen({ route, navigation }) {
         setBgColor(Colors.white);
     }
   }, []);
+
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
       viewRef.current.animate({ 0: { opacity: 0.5 }, 1: { opacity: 1 } });
     });
     return () => unsubscribe;
   }, [navigation]);
+  
   return (
     <View style={Styles.container}>
       <MyHeader

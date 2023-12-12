@@ -1,21 +1,31 @@
+// import from react
 import React, { useState } from 'react';
+// import from react native
 import { View, StyleSheet, Text, TouchableOpacity, Alert, Modal, TextInput, Button } from 'react-native';
+// import from react native calender
 import CalendarPicker from 'react-native-calendar-picker';
 
 const MyCalendar = () => {
+  // state for selectdate
   const [selectedDate, setSelectedDate] = useState(null);
+  // state for events
   const [events, setEvents] = useState({});
+  // state for modal
   const [eventModalVisible, setEventModalVisible] = useState(false);
+  // state for text
   const [eventText, setEventText] = useState('');
 
+  // function for datechange
   const onDateChange = (date) => {
     setSelectedDate(date);
   };
 
+  // function for add event
   const addEvent = () => {
     setEventModalVisible(true);
   };
 
+  // function for save event
   const saveEvent = () => {
     if (!eventText) {
       Alert.alert('Enter event details.');
@@ -37,6 +47,7 @@ const MyCalendar = () => {
     Alert.alert('Event added successfully!');
   };
 
+  // function for render events
   const renderEvents = () => {
     if (!selectedDate) {
       return null;
@@ -50,6 +61,46 @@ const MyCalendar = () => {
       </View>
     ));
   };
+
+  // for styles
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      // marginTop: 50,
+      padding: 16,
+    },
+    addButton: {
+      marginTop: 16,
+      padding: 10,
+      backgroundColor: '#3498db',
+      borderRadius: 5,
+      alignItems: 'center',
+    },
+    buttonText: {
+      color: '#fff',
+    },
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 5,
+      padding: 8,
+      marginVertical: 10,
+      width: '80%',
+    },
+    eventsContainer: {
+      marginTop: 20,
+    },
+    eventsHeader: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginBottom: 10,
+    },
+  });
 
   return (
     <View style={styles.container}>
@@ -90,43 +141,6 @@ const MyCalendar = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // marginTop: 50,
-    padding: 16,
-  },
-  addButton: {
-    marginTop: 16,
-    padding: 10,
-    backgroundColor: '#3498db',
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 8,
-    marginVertical: 10,
-    width: '80%',
-  },
-  eventsContainer: {
-    marginTop: 20,
-  },
-  eventsHeader: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-});
+
 
 export default MyCalendar;

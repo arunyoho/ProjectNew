@@ -11,7 +11,7 @@ import { Badge, Surface, Text, Title } from 'react-native-paper'
 import Feather from 'react-native-vector-icons/Feather'
 
 // import from constants
-import Colors from '../Constants/Colors'
+import Colors from '../constants/Colors'
 
 const IconSize = 24;
 

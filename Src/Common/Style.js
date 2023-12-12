@@ -4,6 +4,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 // import from constants
 import Colors from "../constants/Colors";
+// for styles
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
