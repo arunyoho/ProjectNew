@@ -1,19 +1,29 @@
-// UpcomingExamScreen.js
+// import from react
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+// import from react native
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { SIZES } from "../../constants/theme";
-import { useStateContext } from "../../context/StateContext/StateContext";
+// import from componenets
 import { dummyData } from "../../components/dummyData";
+// import from constants
+import { SIZES } from "../../constants/theme";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
+// import from screen
 import ExamDetailedScreen from "../ExamDetailedScreen";
+// import from constants
+import Colors from "../../constants/Colors";
 
 const UpcomingExamScreen = ({ navigation }) => {
-  const { colors } = useStateContext();
+  // for colors and isdarkmode
+  const { colors,isDarkMode } = useStateContext();
 
+  //for styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
       paddingVertical: SIZES.radius * 2,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
     },
     card: {
       backgroundColor: colors.cardBackground,
@@ -46,17 +56,21 @@ const UpcomingExamScreen = ({ navigation }) => {
         <TouchableOpacity
           style={styles.card}
           key={index}
-          onPress={() =>
-            navigation.navigate(ExamDetailedScreen)
-          }
+          onPress={() => navigation.navigate(ExamDetailedScreen)}
         >
           <View style={{ flex: 1 }}>
             <Text style={[styles.cardText, styles.title]}>{item.title}</Text>
             <Text style={styles.cardText}>{`Type: ${item.examType}`}</Text>
-            <Text style={styles.cardText}>{`Questions: ${item.numberOfQuestions}`}</Text>
-            <Text style={styles.cardText}>{`Highlight Marks: ${item.highlightMarks}`}</Text>
+            <Text
+              style={styles.cardText}
+            >{`Questions: ${item.numberOfQuestions}`}</Text>
+            <Text
+              style={styles.cardText}
+            >{`Highlight Marks: ${item.highlightMarks}`}</Text>
             <Text style={styles.cardText}>{`Time: ${item.time}`}</Text>
-            <Text style={styles.cardText}>{`Duration: ${item.duration.hours}h ${item.duration.minutes}min`}</Text>
+            <Text
+              style={styles.cardText}
+            >{`Duration: ${item.duration.hours}h ${item.duration.minutes}min`}</Text>
           </View>
 
           {/* Date Container */}

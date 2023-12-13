@@ -1,32 +1,39 @@
-// HistoryExamScreen.js
-import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { useStateContext } from '../../context/StateContext/StateContext'; 
-import { dummyData } from '../../components/dummyData';
+// import from react
+import React from "react";
+// import from react native
+import { FlatList, StyleSheet, Text, View } from "react-native";
+// import from components
+import { dummyData } from "../../components/dummyData";
+// import from constants
+import Colors from "../../constants/Colors";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
 
 const ExamHistoryScreen = () => {
-  // Sample exam history data, replace with your actual data
   
-  const { colors } = useStateContext();
+// for colors and darkmode
+  const { colors,isDarkMode } = useStateContext();
+  // for styles
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
     },
     title: {
       fontSize: 24,
-      fontWeight: 'bold',
+      fontWeight: "bold",
       marginBottom: 20,
       color: colors.textColor,
     },
     card: {
-      width: '100%',
+      width: "100%",
       padding: 20,
       borderRadius: 10,
       marginBottom: 15,
-      backgroundColor:colors.cardBackground,
-      borderRadius:10
+      backgroundColor: colors.cardBackground,
+      borderRadius: 10,
       // elevation: 5, // Add elevation for a card-like shadow
     },
     cardText: {
@@ -53,7 +60,5 @@ const ExamHistoryScreen = () => {
     </View>
   );
 };
-
-
 
 export default ExamHistoryScreen;

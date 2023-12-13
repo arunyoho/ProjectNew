@@ -74,6 +74,14 @@ const StackNavigator = () => {
         headerShown: false,
       }}
       >
+        <Stack.Screen
+        name="CompletedExamScreen"
+        component={CompletedExamScreen}
+      />
+        <Stack.Screen
+        name="CompletedClassScreen"
+        component={CompletedClassScreen}
+      />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
@@ -107,10 +115,7 @@ const StackNavigator = () => {
       />
       
 
-      <Stack.Screen
-        name="CompletedExamScreen"
-        component={CompletedExamScreen}
-      />
+      
       <Stack.Screen name="ExamHistoryScreen" component={ExamHistoryScreen} />
 
       
@@ -120,10 +125,7 @@ const StackNavigator = () => {
         name="UpcomingClassScreen"
         component={UpcomingClassScreen}
       />
-      <Stack.Screen
-        name="CompletedClassScreen"
-        component={CompletedClassScreen}
-      />
+      
       <Stack.Screen name="ClassHistoryScreen" component={ClassHistoryScreen} />
       <Stack.Screen
         name="ClassDetailedScreen"

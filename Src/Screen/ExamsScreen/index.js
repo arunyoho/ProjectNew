@@ -1,18 +1,26 @@
+// import from expo vector
+import { Ionicons } from "@expo/vector-icons";
+// import from react
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+// import from react native
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+// import from react native paper
 import { Button } from "react-native-paper";
-import { FontAwesome5,Ionicons } from "@expo/vector-icons";
-import { SIZES, COLORS } from "../../constants/theme";
-import UpcomingExamScreen from "../UpcomingExamScreen";
+import { SafeAreaView } from "react-native-safe-area-context";
+// import from constants
+import Colors from "../../constants/Colors";
+import { COLORS, SIZES } from "../../constants/theme";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
+// import from screen
 import CompletedExamScreen from "../CompletedExamScreen";
 import ExamHistoryScreen from "../ExamHistoryScreen";
-import { useStateContext } from "../../context/StateContext/StateContext";
-import Colors from "../../constants/Colors";
+import UpcomingExamScreen from "../UpcomingExamScreen";
 
 const ExamsScreen = ({ navigation }) => {
-   // use for colors
-   const { colors,isDarkMode } = useStateContext();
+  // use for colors
+  const { colors, isDarkMode } = useStateContext();
+  // states for tab
   const [activeTab, setActiveTab] = useState("Upcoming Exam");
 
   const renderScreen = () => {
@@ -27,11 +35,11 @@ const ExamsScreen = ({ navigation }) => {
         return null;
     }
   };
-
+// for styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor:isDarkMode ? Colors.greenAlpha : colors.background,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius * 2,
     },
@@ -54,8 +62,8 @@ const ExamsScreen = ({ navigation }) => {
     tabContainer: {
       flexDirection: "row",
       justifyContent: "space-around",
-      paddingTop: SIZES.radius*2,
-      paddingBottom:SIZES.radius,
+      paddingTop: SIZES.radius * 2,
+      paddingBottom: SIZES.radius,
       borderBottomWidth: 1,
       borderBottomColor: "#ccc",
       // backgroundColor: COLORS.lightblue,
@@ -68,12 +76,12 @@ const ExamsScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.grandParent}>
-       <View style={styles.header}>
+      <View style={styles.header}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles.back}
         >
-         <Ionicons name="ios-arrow-back" size={24} color="black" />
+          <Ionicons name="ios-arrow-back" size={24} color="black" />
         </TouchableOpacity>
 
         <View>

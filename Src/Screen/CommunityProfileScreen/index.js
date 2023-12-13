@@ -1,67 +1,71 @@
 //  import from React
 import React from "react";
 // import from react native
-import { Text, View, StyleSheet,ScrollView,Image,TouchableOpacity} from "react-native";
-import { Card, ListItem, Avatar } from "react-native-elements";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { Avatar } from "react-native-elements";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import from expo-vector-icons
-import {
-  FontAwesome,
-  MaterialCommunityIcons,
-  Ionicons,
-} from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 //import from constants
 import { COLORS, SIZES } from "../../constants/Index";
+import Colors from "../../constants/Colors";
+
 //import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
 
-import Colors from "../../constants/Colors";
+
 
 const CommunityProfileScreen = () => {
+  // use for colors
+  const { colors, isDarkMode } = useStateContext();
 
-   // use for colors
-   const { colors,isDarkMode } = useStateContext();
-
+  // for dummydata
   const dummyData = {
     student: {
-      name: 'John wick',
-      course: 'Computer Science',
-      batch: 'Batch A',
-      image: 'https://placekitten.com/200/200', // Replace with actual image URL
+      name: "John wick",
+      course: "Computer Science",
+      batch: "Batch A",
+      image: "https://placekitten.com/200/200", // Replace with actual image URL
     },
     batchMembers: [
       {
-        name: 'Alice Smith',
-        designation: 'Student',
-        image: 'https://placekitten.com/150/150', // Replace with actual image URL
+        name: "Alice Smith",
+        designation: "Student",
+        image: "https://placekitten.com/150/150", // Replace with actual image URL
       },
       {
-        name: 'little Johnson',
-        designation: 'Instructor',
-        image: 'https://placekitten.com/160/160', // Replace with actual image URL
+        name: "little Johnson",
+        designation: "Instructor",
+        image: "https://placekitten.com/160/160", // Replace with actual image URL
       },
       {
-        name: 'Rajinikanth',
-        designation: 'Instructor',
-        image: 'https://placekitten.com/160/160', // Replace with actual image URL
+        name: "Rajinikanth",
+        designation: "Instructor",
+        image: "https://placekitten.com/160/160", // Replace with actual image URL
       },
       {
-        name: 'Ajithkumar',
-        designation: 'Instructor',
-        image: 'https://placekitten.com/160/160', // Replace with actual image URL
+        name: "Ajithkumar",
+        designation: "Instructor",
+        image: "https://placekitten.com/160/160", // Replace with actual image URL
       },
       // Add more members as needed
     ],
   };
 
-
-
+  // for styles
   const styles = StyleSheet.create({
     grandparent: {
       flex: 1,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
-      backgroundColor:isDarkMode ? Colors.greenAlpha : colors.background,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
     },
     cardContainer: {
       flexDirection: "row",
@@ -74,14 +78,13 @@ const CommunityProfileScreen = () => {
     },
     memberInfo: {
       marginLeft: 8,
-      color:colors.textColor
+      color: colors.textColor,
     },
     memberName: {
       fontWeight: "bold",
       fontSize: 16,
     },
-  
-   
+
     header: {
       flexDirection: "row",
       alignItems: "center",
@@ -108,27 +111,27 @@ const CommunityProfileScreen = () => {
     name: {
       fontSize: 20,
       fontWeight: "bold",
-      color:colors.textColor
+      color: colors.textColor,
     },
     course: {
       fontSize: 16,
-      
-      color:colors.textColor
+
+      color: colors.textColor,
     },
     batch: {
       fontSize: 16,
       color: "gray",
-      color:colors.textColor
+      color: colors.textColor,
     },
     membersTitle: {
       fontSize: 18,
       fontWeight: "bold",
       marginBottom: 8,
-      color:colors.textColor
+      color: colors.textColor,
     },
-    
+
     cardContent: {
-      padding:SIZES.radius, // Adjust the padding as needed
+      padding: SIZES.radius, // Adjust the padding as needed
     },
     listContent: {
       flexDirection: "row",
@@ -138,19 +141,18 @@ const CommunityProfileScreen = () => {
     memberName: {
       fontWeight: "bold",
       fontSize: 16,
-      color:colors.textColor
-      
+      color: colors.textColor,
     },
     designation: {
-      color:colors.textColor,
+      color: colors.textColor,
     },
   });
+  // for dummy
   const { name, course, batch, image } = dummyData.student;
   return (
     <SafeAreaView style={styles.grandparent}>
       <View>
-
-      <View style={styles.header}>
+        <View style={styles.header}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.back}

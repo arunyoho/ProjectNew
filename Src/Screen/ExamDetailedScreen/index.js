@@ -27,7 +27,7 @@ const ExamDetailedScreen = () => {
    const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor: Colors.greenAlpha,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
     },
