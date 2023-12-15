@@ -187,7 +187,8 @@ eventsHeader: {
         </View>
 
 <View style={{flexDirection:"row"}}>
-       <TouchableOpacity style={styles.courses}>
+       <TouchableOpacity style={styles.courses}
+       onPress={()=> navigation.navigate("CourseDetailedScreen")}>
         <Text style={styles.coursenumber}>
           20
         </Text>

@@ -43,6 +43,7 @@ import UpcomingExamScreen from "./UpcomingExamScreen";
 import ProfileScreen from "./ProfileScreen";
 import BottomTabs from "./BottomTabs";
 import SplashScreen from "./SplashScreen";
+import CourseDetailedScreen from "./CourseDetailedScreen";
 export {
   AccountScreen,
   AnswerPaperScreen,
@@ -86,5 +87,6 @@ export {
   UpcomingExamScreen,
   ProfileScreen,
   BottomTabs,
-  SplashScreen
+  SplashScreen,
+  CourseDetailedScreen
 };

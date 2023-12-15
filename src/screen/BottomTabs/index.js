@@ -24,7 +24,7 @@ const TabArr = [
     type: Icons.Feather,
     icon: "home",
     component: DashBoardScreen,
-    color: Colors.darkOverlayColor,
+    color: Colors.violet,
     alphaClr: Colors.primaryAlpha,
   },
 
@@ -34,7 +34,7 @@ const TabArr = [
     type: Icons.Feather,
     icon: "help-circle",
     component: HelpCenterScreen,
-    color: Colors.darkOverlayColor,
+    color: Colors.violet,
     alphaClr: Colors.primaryAlpha,
   },
   {
@@ -43,7 +43,7 @@ const TabArr = [
     type: Icons.FontAwesome5,
     icon: "user-graduate",
     component: CommunityProfileScreen,
-    color: Colors.darkOverlayColor,
+    color: Colors.violet,
     alphaClr: Colors.primaryAlpha,
   },
   //   { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: AccountScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },

@@ -59,6 +59,7 @@ import TicketsScreen from "../screen/TicketsScreen";
 import UpcomingClassScreen from "../screen/UpcomingClassScreen";
 import UpcomingExamScreen from "../screen/UpcomingExamScreen";
 import SplashScreen from "../screen/SplashScreen";
+import CourseDetailedScreen from "../screen/CourseDetailedScreen";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -70,6 +71,21 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+      <Stack.Screen
+        name="TermsAndConditionScreen"
+        component={TermsAndConditionScreen}
+      />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+      <Stack.Screen
+        name="PrivacyPolicyScreen"
+        component={PrivacyPolicyScreen}
+      />
+      <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
+      <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
+
+      <Stack.Screen name="CourseDetailedScreen" component={CourseDetailedScreen}/>
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen
         name="UpcomingClassScreen"
         component={UpcomingClassScreen}
@@ -87,7 +103,7 @@ const StackNavigator = () => {
         component={CommunityProfileScreen}
       />
 
-      <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      
       <Stack.Screen
         name="CompletedExamScreen"
         component={CompletedExamScreen}
@@ -103,11 +119,10 @@ const StackNavigator = () => {
 
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
 
-      <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
 
       <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />
 
-      <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
+      
       <Stack.Screen
         name="ForgetPasswordScreen"
         component={ForgetPasswordScreen}
@@ -123,22 +138,16 @@ const StackNavigator = () => {
 
       <Stack.Screen name="ExamHistoryScreen" component={ExamHistoryScreen} />
 
-      <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+      
 
       
 
       <Stack.Screen name="ClassHistoryScreen" component={ClassHistoryScreen} />
 
       <Stack.Screen name="HelpDetailsScreen" component={HelpDetailsScreen} />
-      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
-      <Stack.Screen
-        name="TermsAndConditionScreen"
-        component={TermsAndConditionScreen}
-      />
-      <Stack.Screen
-        name="PrivacyPolicyScreen"
-        component={PrivacyPolicyScreen}
-      />
+     
+      
+      
       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
       <Stack.Screen
         name="LibraryDetailedScreen"
