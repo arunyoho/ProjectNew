@@ -53,7 +53,7 @@ const ExamDetailedScreen = () => {
  },
  titlehead:{
   marginTop:SIZES.radius,
-  backgroundColor:Colors.lightRed,
+  backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
   padding:SIZES.padding,
   borderRadius:20
  },
@@ -101,17 +101,17 @@ const ExamDetailedScreen = () => {
  },
  enroll:{
   backgroundColor: COLORS.violet,
-  height: 57,
+  height: 50,
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
   borderRadius: 26,
-  paddingHorizontal: 20,
+  marginHorizontal: 20,
   // marginHorizontal:15
   marginTop:SIZES.padding
  },
  bottomsheet:{
-  backgroundColor:colors.cardBackground,
+  backgroundColor: colors.cardBackground,
   borderTopEndRadius:25,
   borderTopStartRadius:25,
   flex:1,

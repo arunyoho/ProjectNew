@@ -226,12 +226,11 @@ const CommunityScreen = ({ navigation }) => {
     <View style={styles.container}>
       {/* profile details */}
       <SafeAreaView style={styles.profileContainer}>
-        <View style={styles.arrowContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.goBack();
-            }}
-          >
+        <TouchableOpacity style={styles.arrowContainer}
+         onPress={() => {
+          navigation.navigate("CommunityProfileScreen");
+        }}>
+          <TouchableOpacity>
             <Image
               src="https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=600"
               resizeMode="contain"
@@ -251,7 +250,7 @@ const CommunityScreen = ({ navigation }) => {
               ArunBalaji,Sanjay,Rajesh,Aravindh,Balaji
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </SafeAreaView>
 
       <FlatList

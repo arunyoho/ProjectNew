@@ -22,7 +22,7 @@ import { useStateContext } from "../../context/StateContext/StateContext";
 
 
 
-const CommunityProfileScreen = () => {
+const CommunityProfileScreen = ({navigation}) => {
   // use for colors
   const { colors, isDarkMode } = useStateContext();
 
@@ -157,7 +157,7 @@ const CommunityProfileScreen = () => {
             onPress={() => navigation.goBack()}
             style={styles.back}
           >
-            <Ionicons name="ios-arrow-back" size={24} color={COLORS.blue} />
+             <Ionicons name="ios-arrow-back" size={24} color={Colors.primary} />
           </TouchableOpacity>
 
           <View>
@@ -183,7 +183,7 @@ const CommunityProfileScreen = () => {
               key={index}
               style={[styles.cardContainer, styles.cardContent]}
             >
-              <Avatar rounded source={{ uri: member.image }} />
+              <Image  source={{ uri: member.image }} style={{width:50,height:50,borderRadius:50}} />
               <View style={styles.memberInfo}>
                 <Text style={styles.memberName}>{member.name}</Text>
                 <Text style={styles.designation}>{member.designation}</Text>
