@@ -12,14 +12,15 @@ import { Ionicons, Entypo } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../../constants/Index";
 import { useStateContext } from "../../context/StateContext/StateContext";
 import { dummyData } from "../../components/dummyData"; // Import the dummy data
+import Colors from "../../constants/Colors";
 
 const NotificationScreen = ({ navigation }) => {
-  const { colors } = useStateContext();
+  const { colors,isDarkMode } = useStateContext();
 
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor: colors.background,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
     },
@@ -111,7 +112,7 @@ const NotificationScreen = ({ navigation }) => {
                     <Entypo
                       name="dots-three-vertical"
                       size={12}
-                      color="black"
+                      color={isDarkMode ? Colors.darkBlue : colors.textColor}
                       style={{}}
                     />
                   </TouchableOpacity>

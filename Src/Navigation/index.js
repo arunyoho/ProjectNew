@@ -72,6 +72,7 @@ const StackNavigator = () => {
       }}
     >
        <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
        <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="HelpDetailsScreen" component={HelpDetailsScreen} />
@@ -79,7 +80,7 @@ const StackNavigator = () => {
         name="TermsAndConditionScreen"
         component={TermsAndConditionScreen}
       />
-      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+      
       <Stack.Screen
         name="PrivacyPolicyScreen"
         component={PrivacyPolicyScreen}
