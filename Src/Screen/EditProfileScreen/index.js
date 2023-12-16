@@ -52,6 +52,9 @@ const EditProfileScreen = ({ navigation }) => {
  
   // states for Email and errors
   const [email, setEmail] = React.useState("");
+
+  // for email error 
+  const [emailError,setEmailError] = useState(null)
   
 
  
@@ -76,16 +79,26 @@ const EditProfileScreen = ({ navigation }) => {
   };
 
   const handleSave = () => {
+    // Validate email
+    if (!email.trim()) {
+      setEmailError("Email is required");
+      return;
+    } else if (!isValidEmail(email.trim())) {
+      setEmailError("Invalid email address");
+      return;
+    }
+  
+    // If everything is valid, reset the error and proceed with save logic
+    setEmailError(null);
+  
     // Handle save logic here
   };
-
-  const handleCancel = () => {
-    // Handle cancel logic here
+  
+  const isValidEmail = (email) => {
+    // Robust email validation using regex
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailRegex.test(email);
   };
-
- 
-
-
 
    // for using styles.
    const styles = StyleSheet.create({
@@ -106,10 +119,10 @@ const EditProfileScreen = ({ navigation }) => {
       color: colors.textColor,
     },
     back: {
-      backgroundColor: COLORS.lightblue,
+      marginRight: SIZES.base,
+      backgroundColor: colors.iconBackground,
       padding: SIZES.base,
       borderRadius: 10,
-      color: COLORS.darkBlue,
     },
     container: {
       // flex: 1,
@@ -169,6 +182,26 @@ const EditProfileScreen = ({ navigation }) => {
       ...FONTS.h3,
       color: COLORS.white,
     },
+    inputContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderRadius:10,
+      paddingVertical:SIZES.radius,
+      backgroundColor:colors.searchInput,
+      marginVertical:SIZES.radius,
+      marginTop:SIZES.padding,
+     color: colors.textColor
+    },
+    icon: {
+      marginRight: 8,
+      marginLeft:8
+    },
+    inputField: {
+      flex: 1,
+      fontSize: 16,
+      color: colors.textColor
+      
+    },
   });
 
   return (
@@ -178,17 +211,17 @@ const EditProfileScreen = ({ navigation }) => {
         backgroundColor={colors.background}
       />
       <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.back}
-        >
-          <FontAwesome5 name="chevron-left" size={16} color={COLORS.darkBlue} />
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={styles.back}
+          >
+            <Ionicons name="ios-arrow-back" size={24}  color={COLORS.blue}/>
+          </TouchableOpacity>
 
-        <View>
-          <Text style={styles.heading}>Edit Profile</Text>
+          <View>
+            <Text style={styles.heading}>Help Details</Text>
+          </View>
         </View>
-      </View>
       <View style={styles.profileContainer}>
         <Pressable onPress={pickImage}>
           {image ? (
@@ -226,25 +259,30 @@ const EditProfileScreen = ({ navigation }) => {
 
      <View>
       
-      <View style={styles.inputContainer}>
-        <Text style={styles.inputLabel}>Full Name</Text>
-        <TextInput
-          style={styles.inputField}
-          placeholder="Enter your full name"
-          value={username}
-          onChangeText={(text) => setUsername(text)}
-        />
-      </View>
+     <View style={styles.inputContainer}>
+      <AntDesign name="edit" size={24}  color={COLORS.blue} style={styles.icon} />
+      <TextInput
+        style={styles.inputField}
+        placeholderTextColor={colors.textColor}
+        placeholder="Enter your full name"
+        value={username}
+        onChangeText={(text) => setUsername(text)}
+      />
+    </View>
 
       <View style={styles.inputContainer}>
-        <Text style={styles.inputLabel}>Email</Text>
-        <TextInput
+      <MaterialIcons name="email" size={24}  color={COLORS.blue} style={styles.icon} />
+      <TextInput
           style={styles.inputField}
           placeholder="Enter your email"
+          placeholderTextColor={colors.textColor}
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
       </View>
+      {emailError && (
+        <Text style={{ color:"red", ...FONTS.body4,textAlign:"right"}}>{emailError}</Text>
+      )}
      </View>
      
       <View style={styles.buttonContainer}>
@@ -256,7 +294,7 @@ const EditProfileScreen = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.cancelButton]}
-          onPress={handleCancel}
+          // onPress={handleCancel}
         >
           <Text style={styles.buttonText}>Cancel</Text>
         </TouchableOpacity>

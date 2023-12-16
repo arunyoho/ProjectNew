@@ -71,7 +71,10 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
+       <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+       <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="HelpDetailsScreen" component={HelpDetailsScreen} />
       <Stack.Screen
         name="TermsAndConditionScreen"
         component={TermsAndConditionScreen}
@@ -113,7 +116,7 @@ const StackNavigator = () => {
         component={CompletedClassScreen}
       />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+     
 
       <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
 
@@ -144,7 +147,7 @@ const StackNavigator = () => {
 
       <Stack.Screen name="ClassHistoryScreen" component={ClassHistoryScreen} />
 
-      <Stack.Screen name="HelpDetailsScreen" component={HelpDetailsScreen} />
+      
      
       
       
@@ -155,7 +158,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen name="EventsScreen" component={EventsScreen} />
       <Stack.Screen name="EvenDetailedScreen" component={EvenDetailedScreen} />
-      <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
+     
       <Stack.Screen
         name="PaymentDetailedScreen"
         component={PaymentDetailedScreen}
