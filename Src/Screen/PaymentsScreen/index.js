@@ -46,15 +46,26 @@ const PaymentsScreen = ({ navigation }) => {
     setSelectedPayment((prevSelected) => (prevSelected === paymentName ? null : paymentName));
   };
 
+  
 
   const handleConfirmPayment = () => {
     // Handle the logic for confirming the selected payment
     console.log("Confirmed Payment:", selectedPayment);
 
+
+    
+
+    // Show a popup with the text "Payment Successful" and a "Back" button
     Alert.alert("Payment Successful", "Thank you for your payment!", [
       { text: "OK", onPress: () => console.log("OK Pressed") },
+      {
+        text: "Back",
+        onPress: () => {
+          console.log("Back Pressed");
+          // Add any logic to navigate or perform actions when the "Back" button is pressed
+        },
+      },
     ]);
-
   };
 
   // for using styles.
