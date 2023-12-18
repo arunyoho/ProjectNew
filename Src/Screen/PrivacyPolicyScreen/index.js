@@ -7,49 +7,38 @@ import {
   StyleSheet,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5,Ionicons } from "@expo/vector-icons";
 import { useStateContext } from "../../context/StateContext/StateContext";
 import { COLORS, SIZES } from "../../constants/theme";
+import Colors from "../../constants/Colors";
 
 const PrivacyPolicyScreen = ({ navigation }) => {
-  const { colors } = useStateContext();
+  const { colors,isDarkMode } = useStateContext();
 
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
-      backgroundColor: colors.background,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
     },
     header: {
       flexDirection: "row",
       alignItems: "center",
-      marginBottom: SIZES.padding,
     },
     heading: {
       fontSize: SIZES.h2,
       fontWeight: "bold",
-      marginLeft: SIZES.base,
+      marginLeft: SIZES.radius,
       color: colors.textColor,
     },
     back: {
-      header: {
-        flexDirection: "row",
-        alignItems: "center",
-      },
-      heading: {
-        fontSize: SIZES.h2,
-        fontWeight: "bold",
-        marginLeft: SIZES.base,
-        color: colors.textColor,
-      },
-      back: {
-        backgroundColor: COLORS.lightblue,
-        padding: SIZES.base,
-        borderRadius: 10,
-        color: COLORS.darkBlue,
-      },
+     
+      backgroundColor: colors.iconBackground,
+      padding: SIZES.base,
+      borderRadius: 10,
     },
+     
     dashedLine: {
       marginTop: 10,
       borderWidth: 0.5,
@@ -67,19 +56,16 @@ const PrivacyPolicyScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.grandParent}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.header}>
+      <View style={styles.header}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.back}
           >
-            <FontAwesome5
-              name="chevron-left"
-              size={16}
-              color={COLORS.darkBlue}
-            />
+            <Ionicons name="ios-arrow-back" size={24} color={Colors.primary} />
           </TouchableOpacity>
+
           <View>
-            <Text style={styles.heading}> Privacy Policy</Text>
+            <Text style={styles.heading}>Privacy Policy</Text>
           </View>
         </View>
         <View style={styles.dashedLine} />

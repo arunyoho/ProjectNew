@@ -31,14 +31,14 @@ const NotificationScreen = ({ navigation }) => {
     heading: {
       fontSize: SIZES.h2,
       fontWeight: "bold",
-      marginLeft: SIZES.base,
+      marginLeft: SIZES.radius,
       color: colors.textColor,
     },
     back: {
-      backgroundColor: COLORS.lightblue,
+   
+      backgroundColor: colors.iconBackground,
       padding: SIZES.base,
       borderRadius: 10,
-      color: COLORS.darkBlue,
     },
   });
 
@@ -47,17 +47,17 @@ const NotificationScreen = ({ navigation }) => {
       {/* Your existing code */}
 
       <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.back}
-        >
-          <Ionicons name="ios-arrow-back" size={24} color={COLORS.darkBlue} />
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={styles.back}
+          >
+            <Ionicons name="ios-arrow-back" size={24} color={Colors.primary} />
+          </TouchableOpacity>
 
-        <View>
-          <Text style={styles.heading}>Notification</Text>
+          <View>
+            <Text style={styles.heading}>Notification</Text>
+          </View>
         </View>
-      </View>
       <ScrollView>
         {dummyData.notifications.map((notification) => (
           <View key={notification.id} style={{ marginVertical: SIZES.padding }}>

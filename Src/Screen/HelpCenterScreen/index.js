@@ -13,7 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Colors from "../../constants/Colors";
 
-const HelpCenterScreen = () => {
+const HelpCenterScreen = ({navigation}) => {
   // for colors
   const { colors, isDarkMode } = useStateContext();
 
@@ -40,7 +40,7 @@ const HelpCenterScreen = () => {
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor:colors.background,
+      backgroundColor: isDarkMode ?Colors.greenAlpha:colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
     },
@@ -51,14 +51,14 @@ const HelpCenterScreen = () => {
     heading: {
       fontSize: SIZES.h2,
       fontWeight: "bold",
-      marginLeft: SIZES.base,
+      marginLeft: SIZES.radius,
       color: colors.textColor,
     },
     back: {
-      backgroundColor: COLORS.lightblue,
+      
+      backgroundColor: colors.iconBackground,
       padding: SIZES.base,
       borderRadius: 10,
-      color: COLORS.darkBlue,
     },
     dashedLine: {
       marginTop: 10,
@@ -120,7 +120,7 @@ const HelpCenterScreen = () => {
           onPress={() => navigation.goBack()}
           style={styles.back}
         >
-          <Ionicons name="ios-arrow-back" size={24} color={COLORS.darkBlue} />
+          <Ionicons name="ios-arrow-back" size={24} color={Colors.primary} />
         </TouchableOpacity>
 
         <View>

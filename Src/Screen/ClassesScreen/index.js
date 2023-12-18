@@ -12,10 +12,11 @@ import Colors from "../../constants/Colors";
 import { COLORS, SIZES } from "../../constants/theme";
 // import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
+// import from screen
 import UpcomingClassScreen from "../UpcomingClassScreen";
 import CompletedClassScreen from "../CompletedClassScreen";
 import ClassHistoryScreen from "../ClassHistoryScreen";
-// import from screen
+
 
 
 const ClassesScreen = ({ navigation }) => {
@@ -42,7 +43,7 @@ const ClassesScreen = ({ navigation }) => {
       flex: 1,
       backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
       paddingHorizontal: SIZES.radius,
-      paddingVertical: SIZES.radius * 2,
+      paddingVertical: SIZES.radius,
     },
     header: {
       flexDirection: "row",

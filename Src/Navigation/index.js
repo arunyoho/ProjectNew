@@ -71,12 +71,22 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
+        <Stack.Screen name="EvenDetailedScreen" component={EvenDetailedScreen} />
        <Stack.Screen
+        name="ClassDetailedScreen"
+        component={ClassDetailedScreen}
+      />
+      <Stack.Screen name="EventsScreen" component={EventsScreen} />
+          <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
+      <Stack.Screen name="ClassesScreen" component={ClassesScreen} />
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
+      <Stack.Screen
         name="CourseDetailedScreen"
         component={CourseDetailedScreen}
       />
       <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
-       <Stack.Screen
+      <Stack.Screen
         name="PaymentDetailedScreen"
         component={PaymentDetailedScreen}
       />
@@ -94,20 +104,14 @@ const StackNavigator = () => {
         component={PrivacyPolicyScreen}
       />
       <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
-      <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
 
-     
-      <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen
         name="UpcomingClassScreen"
         component={UpcomingClassScreen}
       />
-      <Stack.Screen name="ClassesScreen" component={ClassesScreen} />
+
       <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
-      <Stack.Screen
-        name="ClassDetailedScreen"
-        component={ClassDetailedScreen}
-      />
+     
       <Stack.Screen name="ExamDetailedScreen" component={ExamDetailedScreen} />
 
       <Stack.Screen
@@ -125,7 +129,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
 
-      <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
+  
 
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
 
@@ -153,10 +157,9 @@ const StackNavigator = () => {
         name="LibraryDetailedScreen"
         component={LibraryDetailedScreen}
       />
-      <Stack.Screen name="EventsScreen" component={EventsScreen} />
-      <Stack.Screen name="EvenDetailedScreen" component={EvenDetailedScreen} />
+      
+    
 
-     
       <Stack.Screen
         name="CertificatesModelScreen"
         component={CertificatesModelScreen}

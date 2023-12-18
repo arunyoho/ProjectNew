@@ -33,8 +33,9 @@ const AccountScreen = ({ navigation }) => {
     grandParent: {
       flex: 1,
       backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
-      // paddingHorizontal: SIZES.radius,
+      paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
+      paddingHorizontal:SIZES.radius
     },
     back: {
       marginRight: SIZES.radius,
@@ -58,10 +59,10 @@ const AccountScreen = ({ navigation }) => {
       flexDirection: "row",
     },
     overContainer: {
-      height: "37%",
+      // height: "37%",
       // flex:1,
       backgroundColor: COLORS.lightblue,
-      padding: 15,
+      // padding: 15,
     },
     profileContainer: {
       paddingVertical: SIZES.base,
@@ -75,11 +76,11 @@ const AccountScreen = ({ navigation }) => {
       // display: "flex",
       flexDirection: "row",
       paddingVertical: 20,
-      flex: 1,
+      // flex: 1,
       justifyContent: "center",
     },
     Editprofile: {
-      flex: 1,
+      // flex: 1,
       alignItems: "center",
     },
     EditprofileText: {
@@ -91,11 +92,12 @@ const AccountScreen = ({ navigation }) => {
       color: colors.textColor,
     },
     flexContainer: {
-      flex: 1,
+      // flex: 1,
       borderRadius: 30,
-      marginTop: -25,
-      backgroundColor: "white",
-      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
+      // marginTop: -25,
+      
+      // backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
+      
     },
     menuContainer: {
       display: "flex",
@@ -175,7 +177,7 @@ const AccountScreen = ({ navigation }) => {
               <Image
                 source={user}
                 resizeMode="contain"
-                style={{ height: 100, width: 100, borderRadius: 100 }}
+                style={{ height: 80, width: 80, borderRadius: 80 }}
               />
             </Pressable>
             <Pressable
@@ -227,9 +229,9 @@ const AccountScreen = ({ navigation }) => {
         <View style={styles.flexContainer}>
           <View
             style={{
-              flex: 1,
+              // flex: 1,
               paddingHorizontal: SIZES.radius,
-              paddingVertical: SIZES.radius,
+              // paddingVertical: SIZES.radius,
             }}
           >
             <View style={{ marginVertical: SIZES.base }}>
@@ -346,11 +348,10 @@ const AccountScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
 
-            <View style={{ alignItems: "center", marginTop: 10 }}>
+            <View style={{ alignItems: "center", }}>
               <TouchableOpacity
                 style={{
                   backgroundColor: COLORS.violet,
-
                   height: 57,
                   flexDirection: "row",
                   alignItems: "center",

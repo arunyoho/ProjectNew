@@ -9,13 +9,14 @@ import Colors from "../../constants/Colors";
 // import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
 // import from screen
-import CommunityProfileScreen from "../CommunityProfileScreen";
+
 import DashBoardScreen from "../DashBoardScreen";
 import HelpCenterScreen from "../HelpCenterScreen";
 // import from react native animate
 import * as Animatable from "react-native-animatable";
 // import from react
 import React, { useEffect, useRef } from "react";
+import AccountScreen from "../AccountScreen";
 
 const TabArr = [
   {
@@ -38,11 +39,11 @@ const TabArr = [
     alphaClr: Colors.primaryAlpha,
   },
   {
-    route: "CommunityProfileScreen",
+    route: "Account Screen",
     label: "Profile",
     type: Icons.FontAwesome5,
     icon: "user-graduate",
-    component: CommunityProfileScreen,
+    component:AccountScreen,
     color: Colors.violet,
     alphaClr: Colors.primaryAlpha,
   },
