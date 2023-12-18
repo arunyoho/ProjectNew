@@ -57,7 +57,7 @@ const PaymentsScreen = ({ navigation }) => {
 
     // Show a popup with the text "Payment Successful" and a "Back" button
     Alert.alert("Payment Successful", "Thank you for your payment!", [
-      { text: "OK", onPress: () => console.log("OK Pressed") },
+      { text: "OK", onPress: () =>navigation.navigate("PaymentDetailedScreen")},
       {
         text: "Back",
         onPress: () => {

@@ -72,10 +72,14 @@ const StackNavigator = () => {
       }}
     >
        <Stack.Screen
+        name="CourseDetailedScreen"
+        component={CourseDetailedScreen}
+      />
+      <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
+       <Stack.Screen
         name="PaymentDetailedScreen"
         component={PaymentDetailedScreen}
       />
-      <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -92,10 +96,7 @@ const StackNavigator = () => {
       <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
       <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
 
-      <Stack.Screen
-        name="CourseDetailedScreen"
-        component={CourseDetailedScreen}
-      />
+     
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen
         name="UpcomingClassScreen"

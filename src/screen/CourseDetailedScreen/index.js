@@ -15,8 +15,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
-import { SIZES } from "../../constants/Index";
+import { SIZES,COLORS } from "../../constants/Index";
 import { useStateContext } from "../../context/StateContext/StateContext";
+
 
 const CourseDetailedScreen = ({ navigation }) => {
   // for colors and isdarkmode
@@ -262,7 +263,33 @@ const CourseDetailedScreen = ({ navigation }) => {
           <FontAwesome5 name="lock" size={24} color="black" />
           </View>
         </TouchableOpacity>
-</ScrollView>
+        </ScrollView>
+        <View style={{ alignItems: "center", marginTop:10}}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: COLORS.violet,
+              height: 57,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 26,
+              paddingHorizontal: 20,
+              marginHorizontal: 15,
+            }}
+           onPress={()=>navigation.navigate("PaymentsScreen")}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontWeight: "bold",
+                flex: 1,
+                textAlign: "center",
+              }}
+            >
+              Enroll Now
+            </Text>
+          </TouchableOpacity>
+        </View>
       </KeyboardAwareScrollView>
     </SafeAreaView>
   );
