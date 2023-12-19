@@ -71,6 +71,8 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+      <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
       <Stack.Screen name="AnswerPaperScreen" component={AnswerPaperScreen} />
       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
         <Stack.Screen name="EvenDetailedScreen" component={EvenDetailedScreen} />
@@ -112,7 +114,7 @@ const StackNavigator = () => {
         component={UpcomingClassScreen}
       />
 
-      <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
+      
      
       <Stack.Screen name="ExamDetailedScreen" component={ExamDetailedScreen} />
 
@@ -133,7 +135,7 @@ const StackNavigator = () => {
 
   
 
-      <Stack.Screen name="AccountScreen" component={AccountScreen} />
+      
 
       <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />
 

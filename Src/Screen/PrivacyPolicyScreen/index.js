@@ -1,20 +1,26 @@
+// import from expo vector
+import { Ionicons } from "@expo/vector-icons";
+// import from react
 import React from "react";
+// import from react native
 import {
-  View,
-  Text,
-  TouchableOpacity,
   ScrollView,
   StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FontAwesome5,Ionicons } from "@expo/vector-icons";
-import { useStateContext } from "../../context/StateContext/StateContext";
-import { COLORS, SIZES } from "../../constants/theme";
+// import for constants
 import Colors from "../../constants/Colors";
+import { SIZES } from "../../constants/theme";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
 
 const PrivacyPolicyScreen = ({ navigation }) => {
-  const { colors,isDarkMode } = useStateContext();
-
+  // for colors
+  const { colors, isDarkMode } = useStateContext();
+// for styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
@@ -33,12 +39,11 @@ const PrivacyPolicyScreen = ({ navigation }) => {
       color: colors.textColor,
     },
     back: {
-     
       backgroundColor: colors.iconBackground,
       padding: SIZES.base,
       borderRadius: 10,
     },
-     
+
     dashedLine: {
       marginTop: 10,
       borderWidth: 0.5,
@@ -56,7 +61,7 @@ const PrivacyPolicyScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.grandParent}>
       <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.header}>
+        <View style={styles.header}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.back}

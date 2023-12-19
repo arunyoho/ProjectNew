@@ -1,15 +1,21 @@
+// import from expo vector
+import { Ionicons } from "@expo/vector-icons";
+// import from react
 import React from "react";
+// import from react native
 import {
-  View,
-  Text,
-  TouchableOpacity,
   ScrollView,
   StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FontAwesome5 } from "@expo/vector-icons";
+// import for constants
+import Colors from "../../constants/Colors";
+import { SIZES } from "../../constants/theme";
+// import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
-import { COLORS, SIZES } from "../../constants/theme";
 
 const TermsAndConditionScreen = ({ navigation }) => {
   const { colors } = useStateContext();
