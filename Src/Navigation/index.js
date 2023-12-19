@@ -71,6 +71,8 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="AnswerPaperScreen" component={AnswerPaperScreen} />
+      <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
         <Stack.Screen name="EvenDetailedScreen" component={EvenDetailedScreen} />
        <Stack.Screen
         name="ClassDetailedScreen"
@@ -152,7 +154,7 @@ const StackNavigator = () => {
 
       <Stack.Screen name="ClassHistoryScreen" component={ClassHistoryScreen} />
 
-      <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
+      
       <Stack.Screen
         name="LibraryDetailedScreen"
         component={LibraryDetailedScreen}
@@ -166,7 +168,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
       {/* <Stack.Screen name="CalendarScreen" component={CalendarScreen} /> */}
-      <Stack.Screen name="AnswerPaperScreen" component={AnswerPaperScreen} />
+      
       <Stack.Screen name="ResultScreen" component={ResultScreen} />
       <Stack.Screen
         name="ResultDetailedScreen"

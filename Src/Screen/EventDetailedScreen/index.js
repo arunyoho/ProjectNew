@@ -121,7 +121,6 @@ const EventDetailedScreen = ({ navigation }) => {
     },
     cardContainer: {
       flexDirection: "row",
-
       alignItems: "center",
     },
     memberInfo: {
