@@ -27,6 +27,8 @@ import {
 } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 
+
+
 const EditProfileScreen = ({ navigation }) => {
   // for using colors and dark mode
   const { colors, isDarkMode } = useStateContext();
@@ -41,7 +43,7 @@ const EditProfileScreen = ({ navigation }) => {
   const [emailError, setEmailError] = useState(null);
 
   // state for image
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState();
   // for pick the image
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
